@@ -1,0 +1,17 @@
+{
+  "name": "jimsimon-net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node routes/index.js"
+  },
+  "author": "Jim Simon",
+  "license": "MIT",
+  "dependencies": {
+    "finalhandler": "^0.4.1",
+    "http2": "^3.3.2",
+    "router": "^1.1.3"
+  }
+}
