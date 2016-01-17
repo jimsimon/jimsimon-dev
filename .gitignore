@@ -1,3 +1,4 @@
 .idea
 certificate
 node_modules
+npm-debug.log
