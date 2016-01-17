@@ -1,8 +1,73 @@
 <html>
 <head>
     <title>Jim Simon</title>
+    <script>
+        window.Polymer = window.Polymer || {dom: 'shadow'};
+    </script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html" async>
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html" async>
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html" async>
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" async>
+    <link rel="import" href="bower_components/paper-material/paper-material.html" async>
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html" async>
+    <style>
+        :host {
+            display: block;
+        }
+
+        .nav {
+            border-right: 1px solid #ccc;
+        }
+
+        .main {
+            background-color: #eee;
+        }
+
+        paper-toolbar {
+            background-color: #42A5F5;
+        }
+
+        .content {
+            padding: 0 16px;
+        }
+
+        paper-material {
+            height: 400px;
+            max-width: 640px;
+            margin: 16px auto;
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body>
-    Hello from Jim Simon
+<paper-drawer-panel id="drawerPanel" force-narrow="true">
+
+    <div class="nav" drawer>
+        <!-- Nav Content -->
+    </div>
+
+    <paper-header-panel class="main" main mode="waterfall">
+
+        <!-- Main Toolbar -->
+        <paper-toolbar>
+            <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+            <paper-material></paper-material>
+            <paper-material></paper-material>
+            <paper-material></paper-material>
+            <paper-material></paper-material>
+            <paper-material></paper-material>
+            <paper-material></paper-material>
+            <paper-material></paper-material>
+        </div>
+
+    </paper-header-panel>
+
+</paper-drawer-panel>
+<script src="load-polyfills.js" async></script>
 </body>
 </html>

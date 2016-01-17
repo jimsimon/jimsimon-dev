@@ -10,6 +10,7 @@
   "author": "Jim Simon",
   "license": "MIT",
   "dependencies": {
+    "compression": "^1.6.0",
     "finalhandler": "^0.4.1",
     "http2": "^3.3.2",
     "router": "^1.1.3",
