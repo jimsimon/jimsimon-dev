@@ -15,6 +15,9 @@
     <link rel="import" href="bower_components/iron-icon/iron-icon.html">
     <link rel="import" href="bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+    <link rel="import" href="components/js-home/js-home.html">
+    <link rel="import" href="components/js-work-experience/js-work-experience.html">
+    <link rel="import" href="components/js-personal-projects/js-personal-projects.html">
     <style is="custom-style" include="typography">
         html, body {
             margin: 0;
@@ -29,75 +32,28 @@
         }
 
         h1 {
+            text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.75);
             margin-top: 0;
             margin-bottom: 0;
             margin-left: 10px;
         }
 
-        h2, p {
-            margin: 0;
-        }
-
-        h2 {
-            margin-bottom: 16px;
-        }
-
         paper-button {
-            background: #7986CB;
+            background: #2196F3;
         }
 
         paper-button.iron-selected {
             font-weight: bold;
+            background: #0D47A1;
         }
 
-        section {
-            padding: 50px 0;
+        paper-button:hover {
+            /*text-decoration: underline;*/
+            background: #0D47A1;
         }
 
-        section:nth-of-type(1) {
-            color: white;
-            background: #3f51b5;
-        }
-
-        figure {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        figcaption {
-            width: 600px;
-        }
-
-        section:nth-of-type(2) {
-            background: #F5F5F5;
-        }
-
-        section:nth-of-type(3) {
-            background: #43A047;
-            color: white;
-        }
-
-        #technologies img {
-            height: 65px;
-            margin: 30px;
-            background: white;
-            border: 1px solid gray;
-            border-radius: 15px;
-            padding: 15px;
-        }
-
-        #technologies {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .pane {
-            max-width: 1170px;
-            margin: 0 auto;
+        paper-toolbar {
+            background: #1565C0;
         }
     </style>
 </head>
@@ -105,7 +61,6 @@
 <template is="dom-bind" id="template">
     <paper-header-panel mode="waterfall">
         <paper-toolbar>
-            <!--<img height="50" src="images/jimsimon.jpg">-->
             <h1>Jim Simon</h1>
             <nav>
                 <iron-selector selected="{{selectedIndex}}">
@@ -129,93 +84,9 @@
             </nav>
         </paper-toolbar>
         <iron-pages selected="[[selectedIndex]]">
-            <div>
-                <section>
-                    <div class="pane">
-                        <figure>
-                            <img height="300" src="images/jimsimon.jpg">
-                            <figcaption>
-                                <h2>Welcome!</h2>
-                                <p>
-                                    Hello my name is Jim Simon, welcome to my personal website. I'm a native Michigander
-                                    who
-                                    loves
-                                    to
-                                    code and work on challenging projects. As you peruse through this site, you'll find
-                                    information
-                                    about my personal projects, my work experience, and you'll also find several ways to
-                                    contact
-                                    me.
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </section>
-                <section>
-                    <div class="pane">
-
-                        <h2>Are you a recruiter?</h2>
-                        <p>
-                            While I'm not actively looking for a new job, I'm always open to interesting opportunities
-                            and competitive offers. If you have a position that involves any of the technologies
-                            displayed
-                            below,
-                            feel free to <a href="">contact me</a> so we can discuss the opportunity in more detail.
-                        </p>
-                        <div id="technologies">
-                            <img src="images/nodejs.png"><img src="images/webcomponents.svg"><img
-                                src="images/polymer.svg"><img src="images/dart.png">
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="pane">
-
-                        <h2>Featured Projects</h2>
-                        <p>Tap or click below to check out some of the projects I take the most pride in</p>
-                        <div>Gallery goes here...</div>
-                    </div>
-                </section>
-            </div>
-            <div>
-                <paper-card heading="Mindtap Quantitative">
-                    <div class="card-content">
-                        details go here
-                    </div>
-                </paper-card>
-                <paper-card heading="Mindtap 4 E-Reader">
-                    <div class="card-content">
-                        details go here
-                    </div>
-                </paper-card>
-                <paper-card heading="Mindtap Mobile Services">
-                    <div class="card-content">
-                        details go here
-                    </div>
-                </paper-card>
-                <paper-card heading="Continuous Quality Project">
-                    <div class="card-content">
-                        details go here
-                    </div>
-                </paper-card>
-                <paper-card heading="Jackson Architect">
-                    <div class="card-content">
-                        details go here
-                    </div>
-                </paper-card>
-            </div>
-            <div>
-                <paper-card heading="jimsimon.net">
-                    <div class="card-content">
-                        details go here
-                    </div>
-                </paper-card>
-                <paper-card heading="Cryolysis 2 & 3">
-                    <div class="card-content">
-                        details go here
-                    </div>
-                </paper-card>
-            </div>
+            <js-home></js-home>
+            <js-work-experience></js-work-experience>
+            <js-personal-projects></js-personal-projects>
         </iron-pages>
     </paper-header-panel>
 </template>

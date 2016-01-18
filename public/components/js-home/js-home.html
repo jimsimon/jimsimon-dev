@@ -1,0 +1,108 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="js-home-section.html">
+
+<dom-module id="js-home">
+    <template>
+        <style>
+            js-home-section {
+                padding: 50px 0;
+            }
+
+            js-home-section:nth-of-type(1) {
+                color: white;
+                background: #1565C0;
+            }
+
+            js-home-section:nth-of-type(2) {
+                background: #F5F5F5;
+            }
+
+            js-home-section:nth-of-type(3) {
+                background: #43A047;
+                color: white;
+            }
+
+            figure {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            figure > img {
+                border-radius: 70px;
+            }
+
+            figcaption {
+                width: 600px;
+            }
+
+            #technologies img {
+                height: 65px;
+                margin: 30px;
+                background: white;
+                border: 1px solid gray;
+                border-radius: 15px;
+                padding: 15px;
+            }
+
+            #technologies {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            h2, p {
+                margin: 0;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+            }
+        </style>
+        <js-home-section>
+            <figure>
+                <img height="300" src="../../images/jimsimon.jpg">
+                <figcaption>
+                    <h2>Welcome!</h2>
+                    <p>
+                        Hello my name is Jim Simon, welcome to my personal website. I'm a native Michigander
+                        who
+                        loves
+                        to
+                        code and work on challenging projects. As you peruse through this site, you'll find
+                        information
+                        about my personal projects, my work experience, and you'll also find several ways to
+                        contact
+                        me.
+                    </p>
+                </figcaption>
+            </figure>
+        </js-home-section>
+        <js-home-section>
+            <h2>Are you a recruiter?</h2>
+            <p>
+                While I'm not actively looking for a new job, I'm always open to interesting opportunities
+                and competitive offers. If you have a position that involves any of the technologies
+                displayed
+                below,
+                feel free to <a href="">contact me</a> so we can discuss the opportunity in more detail.
+            </p>
+            <div id="technologies">
+                <img src="../../images/nodejs.png"><img src="../../images/webcomponents.svg"><img
+                    src="../../images/polymer.svg"><img src="../../images/dart.png">
+            </div>
+        </js-home-section>
+        <js-home-section>
+            <h2>Featured Projects</h2>
+            <p>Tap or click below to check out some of the projects I take the most pride in</p>
+            <div>Gallery goes here...</div>
+        </js-home-section>
+    </template>
+    <script>
+        Polymer({
+            is: "js-home"
+        })
+    </script>
+</dom-module>

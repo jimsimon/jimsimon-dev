@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="js-project-card">
+    <template>
+        <style>
+            paper-card {
+                width: inherit;
+            }
+        </style>
+        <paper-card heading="[[heading]]">
+            <div class="card-content">
+                <content></content>
+            </div>
+            <div class="card-actions">
+                <paper-button>More Details...</paper-button>
+            </div>
+        </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is: "js-project-card",
+            properties: {
+                heading: String
+            }
+        });
+    </script>
+</dom-module>

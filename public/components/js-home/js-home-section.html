@@ -1,0 +1,26 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="js-home-section">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            .pane {
+                max-width: 1170px;
+                margin: 0 auto;
+            }
+        </style>
+        <section>
+            <div class="pane">
+                <content></content>
+            </div>
+        </section>
+    </template>
+    <script>
+        Polymer({
+            is: "js-home-section"
+        });
+    </script>
+</dom-module>

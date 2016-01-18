@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../js-project-card/js-project-card.html">
+
+<dom-module id="js-work-experience">
+    <template>
+        <style>
+            :host {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            js-project-card {
+                margin-top: 25px;
+                width: 300px;
+            }
+        </style>
+        <js-project-card heading="Mindtap Quantitative">
+                details go here
+        </js-project-card>
+        <js-project-card heading="Mindtap 4 E-Reader">
+                details go here
+        </js-project-card>
+        <js-project-card heading="Mindtap Mobile Services">
+                details go here
+        </js-project-card>
+        <js-project-card heading="Continuous Quality Project">
+                details go here
+        </js-project-card>
+        <js-project-card heading="Jackson Architect">
+                details go here
+        </js-project-card>
+    </template>
+    <script>
+        Polymer({
+            is: "js-work-experience"
+        });
+    </script>
+</dom-module>
