@@ -58,6 +58,18 @@
             background: #3f51b5;
         }
 
+        figure {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        figcaption {
+            width: 600px;
+        }
+
         section:nth-of-type(2) {
             background: #F5F5F5;
         }
@@ -96,10 +108,22 @@
             <h1>Jim Simon</h1>
             <nav>
                 <iron-selector selected="{{selectedIndex}}">
-                    <paper-button raised noink><iron-icon icon="home"></iron-icon>Home</paper-button>
-                    <paper-button raised noink><iron-icon icon="work"></iron-icon>Work Experience</paper-button>
-                    <paper-button raised noink><iron-icon icon="code"></iron-icon>Personal Projects</paper-button>
-                    <paper-button raised noink><iron-icon icon="communication:chat"></iron-icon>Contact Me</paper-button>
+                    <paper-button raised noink>
+                        <iron-icon icon="home"></iron-icon>
+                        Home
+                    </paper-button>
+                    <paper-button raised noink>
+                        <iron-icon icon="work"></iron-icon>
+                        Work Experience
+                    </paper-button>
+                    <paper-button raised noink>
+                        <iron-icon icon="code"></iron-icon>
+                        Personal Projects
+                    </paper-button>
+                    <paper-button raised noink>
+                        <iron-icon icon="communication:chat"></iron-icon>
+                        Contact Me
+                    </paper-button>
                 </iron-selector>
             </nav>
         </paper-toolbar>
@@ -107,17 +131,23 @@
             <div>
                 <section>
                     <div class="pane">
-
-                        <h2>Welcome!</h2>
-                        <p>
-                            Hello my name is Jim Simon, welcome to my personal website. I'm a native Michigander who
-                            loves
-                            to
-                            code and work on challenging projects. As you peruse through this site, you'll find
-                            information
-                            about my personal projects, my work experience, and you'll also find several ways to contact
-                            me.
-                        </p>
+                        <figure>
+                            <img height="300" src="images/jimsimon.jpg">
+                            <figcaption>
+                                <h2>Welcome!</h2>
+                                <p>
+                                    Hello my name is Jim Simon, welcome to my personal website. I'm a native Michigander
+                                    who
+                                    loves
+                                    to
+                                    code and work on challenging projects. As you peruse through this site, you'll find
+                                    information
+                                    about my personal projects, my work experience, and you'll also find several ways to
+                                    contact
+                                    me.
+                                </p>
+                            </figcaption>
+                        </figure>
                     </div>
                 </section>
                 <section>
