@@ -4,70 +4,195 @@
     <script>
         window.Polymer = window.Polymer || {dom: 'shadow'};
     </script>
-    <link rel="import" href="bower_components/polymer/polymer.html">
-    <link rel="import" href="bower_components/iron-icons/iron-icons.html" async>
-    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html" async>
-    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html" async>
-    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" async>
-    <link rel="import" href="bower_components/paper-material/paper-material.html" async>
-    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html" async>
-    <style>
-        :host {
-            display: block;
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/iron-selector/iron-selector.html">
+    <link rel="import" href="bower_components/iron-pages/iron-pages.html">
+    <link rel="import" href="bower_components/paper-styles/typography.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/iron-icon/iron-icon.html">
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+    <style is="custom-style" include="typography">
+        html, body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: @apply(--paper-font-common-base);
         }
 
-        .nav {
-            border-right: 1px solid #ccc;
+        nav {
+            margin-left: auto;
         }
 
-        .main {
-            background-color: #eee;
+        h1 {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 10px;
         }
 
-        paper-toolbar {
-            background-color: #42A5F5;
+        h2, p {
+            margin: 0;
         }
 
-        .content {
-            padding: 0 16px;
+        h2 {
+            margin-bottom: 16px;
         }
 
-        paper-material {
-            height: 400px;
-            max-width: 640px;
-            margin: 16px auto;
-            background-color: #fff;
+        paper-button {
+            background: #7986CB;
+        }
+
+        paper-button.iron-selected {
+            font-weight: bold;
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        section:nth-of-type(1) {
+            color: white;
+            background: #3f51b5;
+        }
+
+        section:nth-of-type(2) {
+            background: #F5F5F5;
+        }
+
+        section:nth-of-type(3) {
+            background: #43A047;
+            color: white;
+        }
+
+        #technologies img {
+            height: 65px;
+            margin: 30px;
+            background: white;
+            border: 1px solid gray;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        #technologies {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pane {
+            max-width: 1170px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-<paper-drawer-panel id="drawerPanel" force-narrow="true">
-
-    <div class="nav" drawer>
-        <!-- Nav Content -->
-    </div>
-
-    <paper-header-panel class="main" main mode="waterfall">
-
-        <!-- Main Toolbar -->
+<template is="dom-bind" id="template">
+    <paper-header-panel mode="waterfall">
         <paper-toolbar>
-            <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+            <img height="50" src="images/jimsimon.jpg">
+            <h1>Jim Simon</h1>
+            <nav>
+                <iron-selector selected="{{selectedIndex}}">
+                    <paper-button raised noink><iron-icon icon="home"></iron-icon>Home</paper-button>
+                    <paper-button raised noink><iron-icon icon="work"></iron-icon>Work Experience</paper-button>
+                    <paper-button raised noink><iron-icon icon="code"></iron-icon>Personal Projects</paper-button>
+                    <paper-button raised noink><iron-icon icon="communication:chat"></iron-icon>Contact Me</paper-button>
+                </iron-selector>
+            </nav>
         </paper-toolbar>
+        <iron-pages selected="[[selectedIndex]]">
+            <div>
+                <section>
+                    <div class="pane">
 
-        <!-- Main Content -->
-        <div class="content">
-            <paper-material></paper-material>
-            <paper-material></paper-material>
-            <paper-material></paper-material>
-            <paper-material></paper-material>
-            <paper-material></paper-material>
-            <paper-material></paper-material>
-            <paper-material></paper-material>
-        </div>
+                        <h2>Welcome!</h2>
+                        <p>
+                            Hello my name is Jim Simon, welcome to my personal website. I'm a native Michigander who
+                            loves
+                            to
+                            code and work on challenging projects. As you peruse through this site, you'll find
+                            information
+                            about my personal projects, my work experience, and you'll also find several ways to contact
+                            me.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <div class="pane">
 
+                        <h2>Are you a recruiter?</h2>
+                        <p>
+                            While I'm not actively looking for a new job, I'm always open to interesting opportunities
+                            and competitive offers. If you have a position that involves any of the technologies
+                            displayed
+                            below,
+                            feel free to <a href="">contact me</a> so we can discuss the opportunity in more detail.
+                        </p>
+                        <div id="technologies">
+                            <img src="images/nodejs.png"><img src="images/webcomponents.svg"><img
+                                src="images/polymer.svg"><img src="images/dart.png">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="pane">
+
+                        <h2>Featured Projects</h2>
+                        <p>Tap or click below to check out some of the projects I take the most pride in</p>
+                        <div>Gallery goes here...</div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <paper-card heading="Mindtap Quantitative">
+                    <div class="card-content">
+                        details go here
+                    </div>
+                </paper-card>
+                <paper-card heading="Mindtap 4 E-Reader">
+                    <div class="card-content">
+                        details go here
+                    </div>
+                </paper-card>
+                <paper-card heading="Mindtap Mobile Services">
+                    <div class="card-content">
+                        details go here
+                    </div>
+                </paper-card>
+                <paper-card heading="Continuous Quality Project">
+                    <div class="card-content">
+                        details go here
+                    </div>
+                </paper-card>
+                <paper-card heading="Jackson Architect">
+                    <div class="card-content">
+                        details go here
+                    </div>
+                </paper-card>
+            </div>
+            <div>
+                <paper-card heading="jimsimon.net">
+                    <div class="card-content">
+                        details go here
+                    </div>
+                </paper-card>
+                <paper-card heading="Cryolysis 2 & 3">
+                    <div class="card-content">
+                        details go here
+                    </div>
+                </paper-card>
+            </div>
+        </iron-pages>
     </paper-header-panel>
-
-</paper-drawer-panel>
+</template>
 <script src="load-polyfills.js" async></script>
+<script>
+    var template = document.querySelector("#template");
+    template.addEventListener("dom-change", function () {
+        template.selectedIndex = 0;
+    });
+</script>
 </body>
 </html>
