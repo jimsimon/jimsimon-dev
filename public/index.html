@@ -27,33 +27,59 @@
             background: #F5F5F5;
         }
 
-        nav {
-            margin-left: auto;
-        }
-
         h1 {
             text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.75);
             margin-top: 0;
             margin-bottom: 0;
             margin-left: 10px;
+            font-size: 28px;
+        }
+
+        iron-icon {
+            --iron-icon-height: 28px;
+            --iron-icon-width: 28px;
+        }
+
+        iron-selector {
+            display: flex;
         }
 
         paper-button {
-            background: #2196F3;
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            margin: 0;
+        }
+
+        paper-button > span {
+            display: none;
+        }
+
+        @media screen and (min-width: 950px) {
+            paper-button > span {
+                display: inline;
+                margin-left: 5px;
+            }
         }
 
         paper-button.iron-selected {
             font-weight: bold;
-            background: #0D47A1;
-        }
-
-        paper-button:hover {
-            /*text-decoration: underline;*/
-            background: #0D47A1;
         }
 
         paper-toolbar {
             background: #1565C0;
+        }
+
+        paper-toolbar > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        iron-pages {
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -61,27 +87,29 @@
 <template is="dom-bind" id="template">
     <paper-header-panel mode="waterfall">
         <paper-toolbar>
-            <h1>Jim Simon</h1>
-            <nav>
-                <iron-selector selected="{{selectedIndex}}">
-                    <paper-button raised noink>
-                        <iron-icon icon="home"></iron-icon>
-                        Home
-                    </paper-button>
-                    <paper-button raised noink>
-                        <iron-icon icon="work"></iron-icon>
-                        Work Experience
-                    </paper-button>
-                    <paper-button raised noink>
-                        <iron-icon icon="code"></iron-icon>
-                        Personal Projects
-                    </paper-button>
-                    <paper-button raised noink>
-                        <iron-icon icon="communication:chat"></iron-icon>
-                        Contact Me
-                    </paper-button>
-                </iron-selector>
-            </nav>
+            <div>
+                <h1>Jim Simon</h1>
+                <nav>
+                    <iron-selector selected="{{selectedIndex}}">
+                        <paper-button noink>
+                            <iron-icon icon="home"></iron-icon>
+                            <span>Home</span>
+                        </paper-button>
+                        <paper-button noink>
+                            <iron-icon icon="work"></iron-icon>
+                            <span>Work Experience</span>
+                        </paper-button>
+                        <paper-button noink>
+                            <iron-icon icon="code"></iron-icon>
+                            <span>Personal Projects</span>
+                        </paper-button>
+                        <paper-button noink>
+                            <iron-icon icon="communication:chat"></iron-icon>
+                            <span>Contact Me</span>
+                        </paper-button>
+                    </iron-selector>
+                </nav>
+            </div>
         </paper-toolbar>
         <iron-pages selected="[[selectedIndex]]">
             <js-home></js-home>

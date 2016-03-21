@@ -4,6 +4,11 @@
 <dom-module id="js-home">
     <template>
         <style>
+            :host {
+                display: flex;
+                flex-direction: column;
+            }
+
             js-home-section {
                 padding: 50px 0;
             }
@@ -36,6 +41,7 @@
 
             figcaption {
                 width: 600px;
+                margin: 20px;
             }
 
             #technologies img {
