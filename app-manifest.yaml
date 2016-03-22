@@ -6,6 +6,7 @@ metadata:
     app: "webapp"
 spec:
   type: "LoadBalancer"
+  loadBalancerIP: 104.154.119.81
   ports:
     - name: "webapp-80"
       port: 80
