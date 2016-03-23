@@ -18,7 +18,7 @@ router.use('/api', api);
 
 var options = {
     key: fs.readFileSync('./certificate/localhost.key'),
-    cert: fs.readFileSync('./certificate/localhost.crt')
+    cert: fs.readFileSync('./certificate/jimsimon.net.crt')
 };
 var httpsPort = process.env.HTTPS_PORT || 8443;
 https.createServer(options, app).listen(httpsPort);
