@@ -18,7 +18,7 @@
     <link rel="import" href="components/js-home/js-home.html">
     <link rel="import" href="components/js-work-experience/js-work-experience.html">
     <link rel="import" href="components/js-personal-projects/js-personal-projects.html">
-    <style is="custom-style" include="typography">
+    <style is="custom-style">
         html, body {
             margin: 0;
             padding: 0;
@@ -28,11 +28,15 @@
         }
 
         h1 {
-            text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.75);
             margin-top: 0;
             margin-bottom: 0;
-            margin-left: 10px;
-            font-size: 28px;
+            font-size: 21px;
+        }
+
+        @media screen and (min-width: 374px) {
+            h1 {
+                font-size: 28px;
+            }
         }
 
         iron-icon {
@@ -68,6 +72,7 @@
 
         paper-toolbar {
             background: #1565C0;
+            margin-bottom: -1px;
         }
 
         paper-toolbar > div {
