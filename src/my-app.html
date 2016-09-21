@@ -1,0 +1,166 @@
+<link rel="import" href="../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+
+<dom-module id="my-app">
+    <template>
+        <style>
+            :host {
+                font-family: @apply(--paper-font-common-base);
+            }
+
+            h1 {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 21px;
+            }
+
+            @media screen and (min-width: 374px) {
+                h1 {
+                    font-size: 28px;
+                }
+            }
+
+            iron-icon {
+                --iron-icon-height: 28px;
+                --iron-icon-width: 28px;
+            }
+
+            iron-selector {
+                display: flex;
+            }
+
+            paper-button {
+                display: flex;
+                align-items: center;
+                min-width: 0;
+                margin: 0;
+            }
+
+            paper-button > span {
+                display: none;
+            }
+
+            @media screen and (min-width: 950px) {
+                paper-button > span {
+                    display: inline;
+                    margin-left: 5px;
+                }
+            }
+
+            paper-toolbar {
+                background: #1565C0;
+                margin-bottom: -1px;
+            }
+
+            paper-toolbar > div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            iron-pages {
+                display: flex;
+                flex-direction: column;
+            }
+
+            iron-selector > a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            iron-selector > a.iron-selected {
+                font-weight: bold;
+            }
+        </style>
+        <app-location route="{{route}}"></app-location>
+        <app-route
+                route="{{route}}"
+                pattern="/:page"
+                data="{{routeData}}"
+                tail="{{subroute}}"></app-route>
+        <paper-header-panel mode="waterfall">
+            <paper-toolbar>
+                <div>
+                    <h1>Jim Simon</h1>
+                    <nav>
+                        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list"
+                                       role="navigation">
+                            <a href="/" name="home" tabindex="-1">
+                                <paper-button noink>
+                                    <iron-icon icon="home"></iron-icon>
+                                    <span>Home</span>
+                                </paper-button>
+                            </a>
+                            <a href="/work-experience" name="work-experience" tabindex="-1">
+                                <paper-button noink>
+                                    <iron-icon icon="work"></iron-icon>
+                                    <span>Work Experience</span>
+                                </paper-button>
+                            </a>
+                            <a href="/personal-projects" name="personal-projects" tabindex="-1">
+                                <paper-button noink>
+                                    <iron-icon icon="code"></iron-icon>
+                                    <span>Personal Projects</span>
+                                </paper-button>
+                            </a>
+                            <a href="/contact" name="contact" tabindex="-1">
+                                <paper-button noink>
+                                    <iron-icon icon="communication:chat"></iron-icon>
+                                    <span>Contact Me</span>
+                                </paper-button>
+                            </a>
+                        </iron-selector>
+                    </nav>
+                </div>
+            </paper-toolbar>
+            <iron-pages
+                    selected="[[page]]"
+                    attr-for-selected="name"
+                    fallback-selection="404"
+                    role="main">
+                <js-home name="home"></js-home>
+                <js-work-experience name="work-experience"></js-work-experience>
+                <js-personal-projects name="personal-projects"></js-personal-projects>
+                <js-404 name="404"></js-404>
+            </iron-pages>
+        </paper-header-panel>
+    </template>
+    <script>
+        Polymer({
+            is: "my-app",
+            properties: {
+                page: {
+                    type: String,
+                    reflectToAttribute: true,
+                    observer: '_pageChanged'
+                }
+            },
+            observers: [
+                '_routePageChanged(routeData.page)'
+            ],
+            _routePageChanged: function (page) {
+                this.page = page || 'home';
+                this.page = page || 'home';
+            },
+            _pageChanged: function (page) {
+                // Load page import on demand. Show 404 page if fails
+                var resolvedPageUrl = this.resolveUrl('js-' + page + '/js-' + page + '.html');
+                this.importHref(resolvedPageUrl, null, this._showPage404, true);
+            },
+            _showPage404: function () {
+                this.page = '404';
+            }
+        });
+    </script>
+</dom-module>

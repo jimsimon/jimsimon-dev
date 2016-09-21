@@ -1,0 +1,19 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/my-app.html",
+  "fragments": [
+    "src/js-home/js-home.html",
+    "src/js-personal-projects/js-personal-projects.html",
+    "src/js-work-experience/js-work-experience.html",
+    "src/js-404/js-404.html"
+  ],
+  "sourceGlobs": [
+   "src/**/*",
+   "images/**/*",
+   "bower.json"
+  ],
+  "includeDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+  ]
+}
