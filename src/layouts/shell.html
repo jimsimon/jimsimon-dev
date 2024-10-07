@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <header class="page-header">
+    <nav>
+      <ul class="main-links">
+        <li><a href="/">{ Jim Simon }</a></li>
+        <li><a href="/">Blog</a></li>
+        <li><a href="/about">About Me</a></li>
+        <li><a href="/projects">Projects</a></li>
+      </ul>
+      <ul class="social-links">
+        <li><a href="https://www.github.com/jimsimon"><img src="/assets/images/square-github-brands-solid.svg" height="36" width="36"></a></li>
+        <li><a href="https://www.x.com/jimsimon_"><img src="/assets/images/square-x-twitter-brands-solid.svg" height="36" width="36"></a></li>
+        <li><a href="https://www.linkedin.com/in/jim-simon-engineer/"><img src="/assets/images/linkedin-brands-solid.svg" height="36" width="36"></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+---
+layout: shell.html
+title: Jim Simon
+eleventyImport:
+  collections: ["post"]
+---
+<h1>Blog</h1>
+<ul class="post-previews">
+  {%- for post in collections.post -%}
+    <li>
+      <article class="post-preview-article">
+        <header class="post-preview-header">
+          <a href="{{ post.url }}" class="post-preview-link">
+            <h2 class="post-preview-title">{{ post.data.title }}</h2>
+          </a>
+          <div class="post-preview-date">{{ post.data.dateString }}</div>
+        </header>
+        <section class="post-preview-content">
+          {{ post.data.description }}
+        </section>
+      </article>
+    </li>
+  {%- endfor -%}
+</ul>

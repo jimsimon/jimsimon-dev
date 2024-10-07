@@ -1,0 +1,19 @@
+{
+  "name": "jimsimon-net",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "serve": "NODE_OPTIONS='--import tsx/esm --experimental-vm-modules ' node node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tsx": "^4.19.1",
+    "@11ty/eleventy": "^3.0.0",
+    "@lit-labs/eleventy-plugin-lit": "^1.0.3",
+    "@types/node": "^22.7.4",
+    "@biomejs/biome": "^1.9.3"
+  },
+  "private": true
+}

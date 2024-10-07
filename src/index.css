@@ -1,0 +1,142 @@
+html {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: LatoWeb, Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(39, 53, 64, 0.08);
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 2px solid rgb(214, 217, 220);
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+}
+
+nav > ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav > ul > li {
+  display: flex;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: navy;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav > ul > li > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: lowercase;
+  font-weight: bold;
+}
+
+.main-links > li > a {
+  padding: 0.75rem;
+}
+
+.social-links > li > a {
+  text-decoration: none;
+}
+
+.social-links > li > a > img {
+  padding: 0 2px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+.social-links > li > a > img:hover {
+  /*background: rgba(39, 53, 64, 0.1);*/
+  border: 2px solid navy;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  border-left: 2px solid rgb(214, 217, 220);
+  border-right: 2px solid rgb(214, 217, 220);
+  box-sizing: border-box;
+  padding: 0 2rem;
+  background: white;
+}
+
+.post-previews {
+  margin: 0;
+  padding: 0;
+}
+
+.post-previews > li {
+  list-style: none;
+}
+
+.post-preview-article {
+  box-sizing: border-box;
+  border: 2px solid rgb(214, 217, 220);;
+  /*height: 11rem;*/
+  margin: 1rem;
+  /*padding: 1rem;*/
+}
+
+.post-preview-header {
+  border-bottom: 2px solid rgb(214, 217, 220);
+}
+
+.post-preview-link {
+  display: block;
+  padding: .75rem .75rem 0 .75rem;
+}
+
+.post-preview-link > h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.post-preview-title {
+  font-size: 1.25rem;
+}
+
+.post-preview-date {
+  font-size: .6rem;
+  padding: .2rem 0 .75rem .75rem;
+  font-style: italic;
+}
+
+.post-preview-content {
+  padding: .75rem;
+}
