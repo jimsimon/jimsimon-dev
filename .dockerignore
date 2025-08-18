@@ -1,0 +1,54 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build artifacts
+dist
+.vite
+
+# Development files
+.git
+.gitignore
+README.md
+.env.local
+.env.development
+.env.test
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Test files
+coverage
+.nyc_output
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Temporary folders
+tmp
+temp
+
+# Database files (if not needed in container)
+database.db/*

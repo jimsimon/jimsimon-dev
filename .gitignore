@@ -1,0 +1,6 @@
+.claude
+.kilocode
+.vscode
+database.db
+dist
+node_modules
