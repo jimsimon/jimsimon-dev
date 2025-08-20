@@ -17,42 +17,28 @@ const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-key-change-in-productio
 
 export async function authMiddleware(ctx: AuthContext, next: Next): Promise<void> {
   const authHeader = ctx.headers.authorization;
-  
+
   if (authHeader && authHeader.startsWith('Bearer ')) {
     const token = authHeader.substring(7);
-    
+
     try {
-      // For development, accept the simple admin-token
-      if (token === 'admin-token') {
-        const db = getDatabase();
-        const [user] = await db
-          .select()
-          .from(users)
-          .where(eq(users.email, 'jim.j.simon@gmail.com'))
-          .limit(1);
-        
-        if (user) {
-          ctx.user = user;
-        }
-      } else {
-        // JWT token validation
-        const decoded = jwt.verify(token, JWT_SECRET) as any;
-        const db = getDatabase();
-        const [user] = await db
-          .select()
-          .from(users)
-          .where(eq(users.id, decoded.userId))
-          .limit(1);
-        
-        if (user) {
-          ctx.user = user;
-        }
+      // JWT token validation
+      const decoded = jwt.verify(token, JWT_SECRET) as any;
+      const db = getDatabase();
+      const [user] = await db
+        .select()
+        .from(users)
+        .where(eq(users.id, decoded.userId))
+        .limit(1);
+
+      if (user) {
+        ctx.user = user;
       }
     } catch (error) {
       // Invalid token, continue without user
     }
   }
-  
+
   await next();
 }
 
