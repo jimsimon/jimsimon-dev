@@ -9,7 +9,7 @@ export class HomePage extends BaseComponent {
     name: 'Jim Simon',
     title: 'Staff Software Engineer at Reddit',
     location: 'Michigan, USA',
-    bio: 'Passionate software engineer with expertise in backend development, microservices, and open source contributions. Strong focus on Dart, TypeScript, and modern web technologies.',
+    bio: 'Passionate software engineer with expertise in frontend development, microservices, and open source contributions. Strong focus on Dart, TypeScript, and modern web technologies.',
     email: 'jim.j.simon@gmail.com',
     github: 'https://github.com/jimsimon',
     linkedin: 'https://www.linkedin.com/in/jim-simon-engineer/',
