@@ -54,51 +54,6 @@ export async function initializeDatabase(): Promise<typeof db> {
 }
 
 async function seedInitialData(): Promise<void> {
-  const projectsData = [
-    {
-      name: 'Open TCG Store',
-      description: 'An all-inclusive open source system for running a trading card game store',
-      language: 'TypeScript',
-      url: 'https://github.com/jimsimon/open-tcg-store',
-      featured: true
-    },
-    {
-      name: 'Pub Client',
-      description: 'A library for interacting with the REST API for Pub (pub.dartlang.org)',
-      language: 'Dart',
-      url: 'https://github.com/jimsimon/pub_client',
-      stars: 9,
-      featured: true
-    },
-    {
-      name: 'Web Test Runner + DOM Testing Library Demo',
-      description: 'Web testing demonstration project showcasing modern testing techniques',
-      language: 'TypeScript',
-      url: 'https://github.com/jimsimon/wtr-dtl',
-      featured: true
-    },
-    {
-      name: 'Sports App',
-      description: 'Sports-related application built with modern web technologies',
-      language: 'TypeScript',
-      url: 'https://github.com/jimsimon/sports-app',
-      featured: false
-    }
-  ];
-
-  // Insert projects if they don't exist
-  for (const project of projectsData) {
-    const [existingProject] = await db
-      .select()
-      .from(schema.projects)
-      .where(eq(schema.projects.url, project.url))
-      .limit(1);
-    
-    if (!existingProject) {
-      await db.insert(schema.projects).values(project);
-    }
-  }
-
   // Create admin user if it doesn't exist
   const hashedPassword = await bcrypt.hash('admin123', 10);
   await db.insert(schema.users).values({
