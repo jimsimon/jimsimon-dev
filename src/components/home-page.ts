@@ -232,9 +232,9 @@ export class HomePage extends BaseComponent {
           <div class="highlights-grid">
             <div class="highlight-card">
               <div class="highlight-icon">🚀</div>
-              <h3 class="highlight-title">Backend Development</h3>
+              <h3 class="highlight-title">Frontend Development</h3>
               <p class="highlight-description">
-                Specializing in scalable backend systems, microservices architecture, 
+                Specializing in scalable frontend systems, microservices architecture, 
                 and API design with a focus on performance and reliability.
               </p>
             </div>
